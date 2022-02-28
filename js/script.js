@@ -89,7 +89,7 @@ div.innerHTML=`
   
   <h3>ReleaseDate:${info.releaseDate}</h3>
 
-  <h3>Sensors: <p></p></h3>
+  
   
   
   <p class="card-text">WLAN:${info.others.WLAN}</p>
