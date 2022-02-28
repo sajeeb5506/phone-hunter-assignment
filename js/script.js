@@ -1,25 +1,44 @@
 const allPhones =()=>{
   document.getElementById('phone-container').innerHTML="";
-    const inputValue = document.getElementById('input-box').value;
+  document.getElementById('no-value').style.display="none";
+  document.getElementById('phone-detials').innerHTML="";
+    let inputValue = document.getElementById('input-box').value;
+    
+    if(inputValue===""){
+    //  alert('No Input Value')
+    
+    document.getElementById('no-value').style.display="block";
+    
+    }
+    
+   else{
     const url = `https://openapi.programming-hero.com/api/phones?search=${inputValue}`
 
-fetch(url)
-.then(res=>res.json())
-.then(data=>showPhoneData(data.data))
-    
-    // console.log(url);
-document.getElementById('input-box').value="";
-document.getElementById('phone-detials').innerHTML="";
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>showPhoneData(data.data))
+        
+        // console.log(url);
+    document.getElementById('input-box').value="";
+    document.getElementById('phone-detials').innerHTML="";
+    document.getElementById('error').style.display='none';
+   }
+
 }
 const showPhoneData=(phones)=>{
+  
+  if(phones.length==0 ){
+    document.getElementById('error').style.display='block';
 
+}
+else{
     for(const phone of phones){
 
         const parentDiv = document.getElementById('phone-container');
         const div = document.createElement('div');
         div.innerHTML=`
         
-        <div  class="col w-100 ">
+        <div  class="col ">
          
         <div class="card rounded-3">
           <img  src="${phone.image}" class="card-img-top w-50 mx-auto my-3" alt="...">
@@ -40,8 +59,11 @@ const showPhoneData=(phones)=>{
     }
     
 }
+}
 const phoneDitels =(id)=>{
+  document.getElementById('phone-container').innerHTML="";
   document.getElementById('phone-detials').innerHTML="";
+
 const url = ` https://openapi.programming-hero.com/api/phone/${id}`;
  fetch(url)
  .then(res=>res.json())
@@ -80,5 +102,5 @@ div.innerHTML=`
 `;
 parentDiv.appendChild(div);
   // console.log(info.mainFeatures.memory);
-  console.log(info);
+  // console.log(info);
 }
