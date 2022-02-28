@@ -25,7 +25,7 @@ const showPhoneData=(phones)=>{
             <h5 class="card-title">Phone Model:${phone.phone_name} </h5>
             <h5 class="card-title">Phone Brand: ${phone.brand}</h5>
             <p class="card-text"> Discription: ${phone.slug}</p>
-            <button class="btn btn-primary">Diteals</button>
+            <button onclick="phoneDitels('${phone.slug}')"class="btn btn-primary">Diteals</button>
           </div>
         </div>
 
@@ -37,5 +37,18 @@ const showPhoneData=(phones)=>{
         // console.log(phone);
     }
     
+}
+const phoneDitels =(id)=>{
+const url = ` https://openapi.programming-hero.com/api/phone/${id}`;
+ fetch(url)
+ .then(res=>res.json())
+ .then(data=>seeDitels(data.data))
+// console.log(url);
 
+}
+  
+const seeDitels =( info)=>{
+
+
+  // console.log(info.mainFeatures.memory);
 }
