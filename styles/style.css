@@ -5,3 +5,9 @@
 #no-value {
     display: none;
 }
+
+#loading {
+    padding: 10px 20px;
+    font-size: 25px;
+    display: none;
+}

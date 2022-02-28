@@ -1,4 +1,5 @@
 const allPhones =()=>{
+  document.getElementById('loading').style.display="block";
   document.getElementById('phone-container').innerHTML="";
   document.getElementById('no-value').style.display="none";
   document.getElementById('error').style.display='none';
@@ -9,7 +10,7 @@ const allPhones =()=>{
     //  alert('No Input Value')
     
     document.getElementById('no-value').style.display="block";
-    
+    document.getElementById('loading').style.display="none";
     }
     
    else{
@@ -23,6 +24,7 @@ const allPhones =()=>{
     document.getElementById('input-box').value="";
     document.getElementById('phone-detials').innerHTML="";
     document.getElementById('error').style.display='none';
+    document.getElementById('loading').style.display="none";
    }
 
 }
