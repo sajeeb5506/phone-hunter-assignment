@@ -1,6 +1,7 @@
 const allPhones =()=>{
   document.getElementById('phone-container').innerHTML="";
   document.getElementById('no-value').style.display="none";
+  document.getElementById('error').style.display='none';
   document.getElementById('phone-detials').innerHTML="";
     let inputValue = document.getElementById('input-box').value;
     
