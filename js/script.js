@@ -77,6 +77,44 @@ const url = ` https://openapi.programming-hero.com/api/phone/${id}`;
   
 const seeDitels =( info)=>{
 
+  if(info.releaseDate==""){
+ const relesdate="Not Found";
+
+ const sensors=info.mainFeatures.sensors;
+
+ const parentDiv= document.getElementById('phone-detials');
+ const div= document.createElement('div');
+ div.innerHTML=`
+ <div class="card" style="width: 18rem;">
+ <img src="${info.image}" class="card-img-top w-50 mx-auto m-3" alt="...">
+ <div class="card-body">
+   <h3>Name:${info.name}</h3>
+   <h3>Brand:${info.brand} </h3>
+   <h3>Storaged:${info.mainFeatures.storage}</h3>
+   <h3>DisplaySize:${info.mainFeatures.displaySize}</h3>
+   <h3>ChipSet: ${info.mainFeatures.chipSet}</h3>
+   
+   <h3>ReleaseDate:${relesdate}</h3>
+ 
+   <h4>Sensors: ${sensors}</h4>
+   
+   
+   <p class="card-text">WLAN:${info.others.WLAN}</p>
+   <p class="card-text"> Bluetooth:${info.others.Bluetooth}</p>
+   <p class="card-text"> GPS:${info.others.GPS}</p>
+   <p class="card-text">USB: ${info.others.USB}</p>
+   <p class="card-text">READIO: ${info.others.Radio}</p>
+  
+ </div>
+ </div>
+ `;
+ parentDiv.appendChild(div);
+
+  }
+  else{
+
+const sensors=info.mainFeatures.sensors;
+
 const parentDiv= document.getElementById('phone-detials');
 const div= document.createElement('div');
 div.innerHTML=`
@@ -91,7 +129,7 @@ div.innerHTML=`
   
   <h3>ReleaseDate:${info.releaseDate}</h3>
 
-  
+  <h4>Sensors: ${sensors}</h4>
   
   
   <p class="card-text">WLAN:${info.others.WLAN}</p>
@@ -106,4 +144,6 @@ div.innerHTML=`
 parentDiv.appendChild(div);
   // console.log(info.mainFeatures.memory);
   // console.log(info);
+
+}
 }
