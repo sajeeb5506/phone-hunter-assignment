@@ -29,14 +29,14 @@ const allPhones =()=>{
 
 }
 const showPhoneData=(phones)=>{
-  
-  if(phones.length==0 ){
+  let showTwentyPhone=phones.slice(0,20);
+  if(showTwentyPhone.length==0 ){
     document.getElementById('error').style.display='block';
 
 }
 else{
-    for(const phone of phones){
-
+    for(const phone of showTwentyPhone){
+        //  console.log(phone.slice(0,4));
         const parentDiv = document.getElementById('phone-container');
         const div = document.createElement('div');
         div.innerHTML=`
@@ -58,7 +58,7 @@ else{
         `
         parentDiv.appendChild(div);
 
-        // console.log(phone);
+      
     }
     
 }
