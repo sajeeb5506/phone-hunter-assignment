@@ -85,7 +85,7 @@ const seeDitels =( info)=>{
  const parentDiv= document.getElementById('phone-detials');
  const div= document.createElement('div');
  div.innerHTML=`
- <div class="card" style="width: 18rem;">
+ <div class="card" style="width: 22rem;">
  <img src="${info.image}" class="card-img-top w-50 mx-auto m-3" alt="...">
  <div class="card-body">
    <h3>Name:${info.name}</h3>
@@ -118,7 +118,7 @@ const sensors=info.mainFeatures.sensors;
 const parentDiv= document.getElementById('phone-detials');
 const div= document.createElement('div');
 div.innerHTML=`
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 22rem;">
 <img src="${info.image}" class="card-img-top w-50 mx-auto m-3" alt="...">
 <div class="card-body">
   <h3>Name:${info.name}</h3>
