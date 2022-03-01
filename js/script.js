@@ -7,8 +7,7 @@ const allPhones =()=>{
     let inputValue = document.getElementById('input-box').value;
     
     if(inputValue===""){
-    //  alert('No Input Value')
-    
+  
     document.getElementById('no-value').style.display="block";
     document.getElementById('loading').style.display="none";
     }
@@ -36,7 +35,7 @@ const showPhoneData=(phones)=>{
 }
 else{
     for(const phone of showTwentyPhone){
-        //  console.log(phone.slice(0,4));
+        
         const parentDiv = document.getElementById('phone-container');
         const div = document.createElement('div');
         div.innerHTML=`
@@ -64,14 +63,14 @@ else{
 }
 }
 const phoneDitels =(id)=>{
-  document.getElementById('phone-container').innerHTML="";
+ 
   document.getElementById('phone-detials').innerHTML="";
 
 const url = ` https://openapi.programming-hero.com/api/phone/${id}`;
  fetch(url)
  .then(res=>res.json())
  .then(data=>seeDitels(data.data))
-// console.log(url);
+
 
 }
   
@@ -142,8 +141,6 @@ div.innerHTML=`
 </div>
 `;
 parentDiv.appendChild(div);
-  // console.log(info.mainFeatures.memory);
-  // console.log(info);
 
 }
 }
